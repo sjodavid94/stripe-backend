@@ -43,21 +43,6 @@ app.use(cors({
             mode: "payment",
             success_url: `${process.env.FRONTEND_URL}`,
             cancel_url: `${process.env.FRONTEND_URL}`,
-
-            // ✅ Require phone number via custom field
-            custom_fields: [
-                {
-                    key: "phone",
-                    label: {
-                        type: "custom",
-                        custom: "Telefoonnummer"
-                    },
-                    type: "text",
-                    text: {
-                        required: true
-                    }
-                }
-            ],
         });
 
         res.json({ url: session.url });
